@@ -22,7 +22,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ url('inventory') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Inventory</span></a>
 

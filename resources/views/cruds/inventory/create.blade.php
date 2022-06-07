@@ -2,6 +2,7 @@
 
 @section('content')
 
+<div class="container">
 <div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Current Stock</h1>
@@ -12,32 +13,42 @@
 	<div class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Stock Data
+				Stocks Data
 			</div>
 			<div class="panel-body">
+
+				<div class="row" style="margin-left: 5px"> 
+				<a href="{{ url('/inventory/create') }}"> <button class="btn-primary btn-sm">Add</button></a>
+				</div>
+
 				<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 					<thead>
 						<tr>
-							<th>Product Name</th>
-							<th>Units In Stock</th>
-							<th>Units On Orders</th>
-							<th>Units Received</th>
-							<th>Minimum Required</th>
-							<th>Price</th>
-							<th>Status</th>
+							<th>Item Type</th>
+							<th>Karat Gold</th>
+							<th>Kind of Stone</th>
+							<th>Weight</th>
+							<th>Tag Price</th>
+							<th>Amount</th>
+							<th colspan="2">Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach($products as $product)
-						<tr style="{{ ($product->units_in_stock <= $product->minimum_required) ? 'background-color: #f4433636' : '' }}" >
-							<td> {{ $product->name }} </td>
-							<td class="center"> {{ $product->units_in_stock }} </td>
-							<td class="center"> {{ $product->units_on_order }} </td>
-							<td class="center"> {{ $product->units_received }} </td>
-							<td class="center"> {{ $product->minimum_required }} </td>
-							<td class="center"> {{ $product->price }} </td>
-							<td class="center">{{ ($product->units_in_stock <= $product->minimum_required) ? 'Need Reorder' : 'Available' }}</td>
+						<tr style="{{ ($product->item_type) ? 'background-color: #f4433636' : '' }}" >
+							<td class="center"> {{ $product->item_type }} </td>
+							<td class="center"> {{ $product->karat_gold }} </td>
+							<td class="center"> {{ $product->kind_of_stone }} </td>
+							<td class="center"> {{ $product->weight }} </td>
+							<td class="center"> {{ $product->tag_price }} </td>
+							<td class="center">{{ ($product->amount) }}</td>
+							<td class="center"><a href="{{ url('/inventory'."/". $product->id."/edit") }}"><button class="btn-primary">Edit</button></a></td>
+							<td class="center"> <form method="POST" action="{{ url('/inventory' . '/' . $product->id) }}" accept-charset="UTF-8" style="display:inline">
+								{{ method_field('DELETE') }}
+								{{ csrf_field() }}
+								<button type="submit" class="btn btn-danger btn-sm" title="Delete Stock" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button></td>
 						</tr>
+
 						@endforeach
 					</tbody>
 				</table>			
@@ -45,6 +56,6 @@
 		</div>
 	</div>
 </div>
-
+</div>
 
 @endsection
