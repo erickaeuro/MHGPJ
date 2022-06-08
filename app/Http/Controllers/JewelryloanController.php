@@ -1,19 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Jewelryloan;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class JewelryloanController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $jewelryloan = Jewelryloan::all();
+        return view('cruds.jewelryloan.create') -> with ("jewelryloan", $jewelryloan);
     }
 
     /**
@@ -23,7 +24,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('cruds.jewelryloan.add');
     }
 
     /**
@@ -34,7 +35,9 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Jewelryloan::create($input);
+        return redirect('jewelryloan')->with('flash_message', 'Jewelry loan Added!'); 
     }
 
     /**
@@ -56,7 +59,7 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**
@@ -68,7 +71,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
     }
 
     /**
@@ -79,6 +82,6 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
     }
 }

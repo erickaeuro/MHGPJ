@@ -20,12 +20,21 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="{{ url('inventory') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Inventory</span></a>
+    <!-- Nav Item - Inventory -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Inventory</span>
+        </a>
 
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item"  href="{{ url('inventory') }}">Stocks</a>    
+                    <a class="collapse-item" href="cards.html">Jewelry Sales</a>
+                </div>
+            </div>
+        </li>
       <!-- Nav Item - Transaction Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -35,7 +44,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Jewelry Loan</a>
+                <a class="collapse-item" href="{{ url('jewelryloan') }}">Jewelry Loan</a>
                 <a class="collapse-item" href="cards.html">Auction</a>
                 <a class="collapse-item" href="cards.html">Renewal</a>
                 <a class="collapse-item" href="cards.html">Redeem</a>
