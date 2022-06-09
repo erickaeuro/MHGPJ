@@ -27,7 +27,6 @@
             <i class="fas fa-fw fa-cog"></i>
             <span>Inventory</span>
         </a>
-
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item"  href="{{ url('inventory') }}">Stocks</a>    
@@ -47,7 +46,7 @@
                 <a class="collapse-item" href="{{ url('jewelryloan') }}">Jewelry Loan</a>
                 <a class="collapse-item" href="cards.html">Auction</a>
                 <a class="collapse-item" href="cards.html">Renewal</a>
-                <a class="collapse-item" href="cards.html">Redeem</a>
+                <a class="collapse-item" href="{{ url('redeem') }}">Redeem</a>
                 <a class="collapse-item" href="cards.html">Pawn Ticket</a>
             </div>
         </div>

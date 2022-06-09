@@ -9,6 +9,19 @@
 	</div>
 </div>
 
+ <!-- Topbar Search -->
+
+ <div class="row">
+	<div class="col-1"></div>
+	<div class="col-12 col-lg">
+		<input type="text" placeholder="Search" class="form-control">
+	</div>
+
+	<div class="col-12 col-sm-2">
+		<a href="{{ url('/inventory/create') }}"><button class="form-control">Add</button></a>            </div>
+    </div>
+<br>
+
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
@@ -16,10 +29,6 @@
 				Stocks Data
 			</div>
 			<div class="panel-body">
-
-				<div class="row" style="margin-left: 5px"> 
-				<a href="{{ url('/inventory/create') }}"> <button class="btn-primary btn-sm">Add</button></a>
-				</div>
 
 				<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 					<thead>

@@ -1,4 +1,4 @@
-@extends('products.layout')
+@extends('cruds.redeem.layout')
      
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
                 <h2>Laravel 9 CRUD with Image Upload Example from scratch - ItSolutionStuff.com</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('redeem.create') }}"> Create New Product</a>
             </div>
         </div>
     </div>
@@ -33,11 +33,11 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->detail }}</td>
             <td>
-                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                <form action="{{ route('redeem.destroy',$product->id) }}" method="POST">
      
-                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('redeem.show',$product->id) }}">Show</a>
       
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('redeem.edit',$product->id) }}">Edit</a>
      
                     @csrf
                     @method('DELETE')
