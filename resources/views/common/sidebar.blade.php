@@ -13,7 +13,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fa-regular fa-grid-horizontal"></i>
             <span>Dashboard</span></a>
     </li>
 
@@ -55,7 +55,7 @@
     <!-- Nav Item - Reports -->
     <li class="nav-item active">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fa-regular fa-file-chart-column"></i>
             <span>Reports</span></a>
     </li>
 

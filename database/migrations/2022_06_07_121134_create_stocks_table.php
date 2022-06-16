@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->string("stock_no");
             $table->string("item_type");
             $table->string("karat_gold");
             $table->string("kind_of_stone");
             $table->string("weight");
+            $table->string("item_qty");
             $table->string("tag_price");
             $table->string("amount");
             $table->timestamps();
