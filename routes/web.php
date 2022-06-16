@@ -28,6 +28,6 @@ Route::resource("/inventory", StockController::class);
 
 Route::resource("/jewelryloan", JewelryloanController::class);
 
-Route::resource('redeem', ProductController::class);
+Route::resource('/redeem', ProductController::class);
 
-Route::resource('/auction', AuctionController::class);
+Route::get('/auction', [App\Http\Controllers\AuctionController::class, 'index']);

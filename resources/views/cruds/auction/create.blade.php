@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="col-12 col-sm-2">
-		<a href="{{ url('/inventory/create') }}"><button class="form-control">Add</button></a>            </div>
+		<a href="{{ url('/auction/create') }}"><button class="form-control">Add</button></a>            </div>
     </div>
 <br>
 
@@ -31,24 +31,23 @@
 				<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 					<thead>
 						<tr>
-							<th>Item Type</th>
-							<th>Karat Gold</th>
-							<th>Kind of Stone</th>
-							<th>Weight</th>
-							<th>Tag Price</th>
-							<th>Amount</th>
+							<th>Pawn Ticket No.</th>
+							<th>Loan Date</th>
+							<th>Principal</th>
+							<th>Payments Made</th>
+							<th>Description</th>
+							<th>Status</th>
 							<th colspan="2">Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($products as $product)
-						<tr style="{{ ($product->item_type) ? 'background-color: #f4433636' : '' }}" >
-							<td class="center"> {{ $product->item_type }} </td>
-							<td class="center"> {{ $product->karat_gold }} </td>
-							<td class="center"> {{ $product->kind_of_stone }} </td>
-							<td class="center"> {{ $product->weight }} </td>
-							<td class="center"> {{ $product->tag_price }} </td>
-							<td class="center">{{ ($product->amount) }}</td>
+						@foreach($auction as $auction)
+							<td class="center"> {{ $auction->pawn_ticket_no }} </td>
+							<td class="center"> {{ $auction->loan_date }} </td>
+							<td class="center"> {{ $auction->principal }} </td>
+							<td class="center"> {{ $auction->payments_made }} </td>
+							<td class="center"> {{ $auction->description }} </td>
+							<td class="center">{{ ($auction->status) }}</td>
 							<td class="center"><a href="{{ url('/inventory'."/". $product->id."/edit") }}"><button class="btn-primary">Edit</button></a></td>
 							<td class="center"> <form method="POST" action="{{ url('/inventory' . '/' . $product->id) }}" accept-charset="UTF-8" style="display:inline">
 								{{ method_field('DELETE') }}
