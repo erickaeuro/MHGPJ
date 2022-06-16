@@ -25,7 +25,7 @@ class AuctionController extends Controller
      */
     public function create()
     {
-        
+        return view('cruds.auction.add');
     }
 
     /**
@@ -36,7 +36,9 @@ class AuctionController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $input = $request->all();
+        Auction::create($input);
+        return redirect('auction')->with('flash_message', 'Auction Added!');
     }
 
     /**
