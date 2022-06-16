@@ -29,3 +29,5 @@ Route::resource("/inventory", StockController::class);
 Route::resource("/jewelryloan", JewelryloanController::class);
 
 Route::resource('redeem', ProductController::class);
+
+Route::resource('/auction', AuctionController::class);
