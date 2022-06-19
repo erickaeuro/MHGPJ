@@ -13,23 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('redeem', function (Blueprint $table) {
+        Schema::create('pawnticket', function (Blueprint $table) {
             $table->id();
-            $table->string("customer_no");
-            $table->string("firstname");
-            $table->string("lastname");
-            $table->string("middle_initial");
-            $table->string("address");
             $table->string("pawn_ticket_no");
             $table->string("date_loan_granted");
             $table->string("maturity_date");
             $table->string("expiry_date");
+            $table->date("name");
+            $table->string("address");
             $table->string("description");
             $table->string("appraised_value");
             $table->string("principal");
             $table->string("interest");
             $table->string("penalty");
             $table->string("redemption_amount");
+            $table->string("renewal_amount");
             $table->timestamps();
         });
     }
@@ -41,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('redeem');
+        Schema::dropIfExists('pawnticket');
     }
 };

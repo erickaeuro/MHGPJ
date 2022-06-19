@@ -17,7 +17,7 @@
                     
                 </div>
                 <div class="panel-body">
-                    <form action="{{ url('/auction') }}" method="post">
+                    <form action="{{ url('/auction/create') }}" method="post">
     
                         {!! csrf_field() !!}
     

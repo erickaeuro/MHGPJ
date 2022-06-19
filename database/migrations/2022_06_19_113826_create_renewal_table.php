@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('redeem', function (Blueprint $table) {
+        Schema::create('renewal', function (Blueprint $table) {
             $table->id();
             $table->string("customer_no");
             $table->string("firstname");
             $table->string("lastname");
             $table->string("middle_initial");
-            $table->string("address");
             $table->string("pawn_ticket_no");
             $table->string("date_loan_granted");
             $table->string("maturity_date");
@@ -29,7 +28,10 @@ return new class extends Migration
             $table->string("principal");
             $table->string("interest");
             $table->string("penalty");
-            $table->string("redemption_amount");
+            $table->string("advance_interest");
+            $table->string("service_charge");
+            $table->string("total_amount_due");
+            $table->string("new_pawnticket_no");
             $table->timestamps();
         });
     }
@@ -41,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('redeem');
+        Schema::dropIfExists('renewal');
     }
 };

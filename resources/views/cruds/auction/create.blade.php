@@ -48,10 +48,10 @@
 							<td class="center"> {{ $auction->payments_made }} </td>
 							<td class="center"> {{ $auction->description }} </td>
 							<td class="center">{{ ($auction->status) }}</td>
-							<td class="center"><a href="{{ url('/inventory'."/". $product->id."/edit") }}"><button class="btn-primary">Edit</button></a></td>
-							<td class="center"> <form method="POST" action="{{ url('/inventory' . '/' . $product->id) }}" accept-charset="UTF-8" style="display:inline">
+							<td class="center"><a href="{{ url('/auction'."/". $auction->id."/edit") }}"><button class="btn-primary">Edit</button></a></td>
+							<td class="center"> <form method="POST" action="{{ url('/auction' . '/' . $auction->id) }}" accept-charset="UTF-8" style="display:inline">
 								{{ method_field('DELETE') }}
-								{{ csrf_field() }}
+								{{ csrf_field()  }}
 								<button type="submit" class="btn btn-danger btn-sm" title="Delete Stock" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button></td>
 						</tr>
 

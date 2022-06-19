@@ -26,8 +26,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource("/inventory", StockController::class);
 
-Route::resource("/jewelryloan", JewelryloanController::class);
+Route::get('/jewelryloan', [App\Http\Controllers\JewelryloanController::class, 'index']);
 
 Route::resource('/redeem', ProductController::class);
 
 Route::get('/auction', [App\Http\Controllers\AuctionController::class, 'index']);
+

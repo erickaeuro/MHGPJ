@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string("cpnum");
             $table->string("birthdate");
             $table->string("valid_id");
-
             $table->timestamps();
         });
     }
